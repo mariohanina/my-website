@@ -1,0 +1,476 @@
+/* ------------------------------------------------------------ */
+/* ------------------------ MAIN PAGE ------------------------ */
+/* Profile Section */
+.intro-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: calc(var(--space-unit) * 3);
+    margin-bottom: 0;
+}
+
+.profile-picture {
+    flex-basis: 0;
+    flex-grow: 0;
+    width: 200px;
+    /* max-width: 200px; */
+    max-height: 80vh;
+}
+
+.profile-text {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+.profile-text span {
+    display: block;
+    font-size: calc(var(--font-size-unit) * 3);
+    margin-bottom: calc(var(--space-unit) * 1);
+}
+
+/* Art Section and Apps Section*/
+.hobby-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--space-unit) * 3);
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hobby-wrapper {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hobby-cards {
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.hobby-cards img {
+    vertical-align: bottom;
+    transition: 0.2s;
+}
+
+.hobby-cards img:hover {
+    scale: 1.1;
+}
+
+.hobby-wrapper,
+.hobby-wrapper>div>p {
+    margin-bottom: 0;
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact-form input {
+    width: 100%;
+}
+
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: calc(var(--space-unit) * 3);
+}
+
+.contact-form button {
+    display: block;
+    margin: auto;
+    /* min-width: 25%; */
+}
+
+/* ------------------------------------------------------------ */
+/* ---------------------- CONTACT RESULT ---------------------- */
+.contact-result {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------ */
+/* ------------------------ PHOTO GALLERY ------------------------ */
+.photo-gallery-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: calc(var(--alt-space-unit) * 2);
+    margin: auto;
+    margin-bottom: 0;
+    max-width: 2000px;
+}
+
+.photo-gallery-wrapper div {
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0;
+}
+
+.photo-gallery-wrapper img {
+    vertical-align: bottom;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.photo-gallery-wrapper img:hover {
+    scale: 1.1;
+    transition: 0.2s;
+}
+
+.photo-gallery-wrapper figcaption {
+    margin-top: var(--font-size-unit);
+}
+
+/* ------------------------------------------------------------ */
+/* ----------------------- ART GALLERY ------------------------ */
+.dry-media-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--alt-space-unit) * 2);
+    margin-bottom: 0;
+}
+
+.dry-media-wrapper div {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0;
+}
+
+.dry-media-wrapper img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    transition: 0.2s;
+}
+
+.dry-media-wrapper img:hover {
+    scale: 1.1;
+}
+
+/* ------------------------------------------------------------ */
+/* ----------------------- IMAGE VIEWER ----------------------- */
+.iv-body * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Directions Modal */
+.iv-directions-wrapper {
+    margin-bottom: 0;
+}
+
+.iv-directions-wrapper * {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.stop-showing-wrapper input,
+.stop-showing-wrapper label {
+    display: inline;
+    margin-bottom: 0;
+}
+
+
+/* The Image */
+#scrollable-container {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.image-container {
+    margin: 0;
+    transform-origin: 0 0;
+    flex-grow: 1;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+#image {
+    vertical-align: bottom;
+    max-width: 100vw;
+    min-width: 100vw;
+    max-height: 100vh;
+    min-height: 100vh;
+    object-fit: contain;
+}
+
+#prev-img,
+#next-img {
+    display: inline-block;
+}
+
+/* Buttons */
+.iv-ui {
+    width: calc(100% - 24px);
+    position: fixed;
+    margin: 12px;
+}
+
+.iv-buttons-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.iv-ui button {
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+    opacity: 0.5;
+}
+
+.iv-ui button:hover,
+.iv-navigator button:hover {
+    opacity: 1;
+    background-color: var(--main-bg-color);
+}
+
+/* ------------------------------------------------------------ */
+/* --------------------- FLASHCARDS MAIN ---------------------- */
+.flashcards-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: calc(var(--space-unit) * 2);
+    margin-bottom: 0;
+}
+
+.flashcards-categories a {
+    padding: calc(var(--space-unit) * 3);
+    border: 1px solid var(--border-color);
+    transition: 0.2s;
+}
+
+.flashcards-categories a:hover {
+    background-color: var(--form-effects-color);
+}
+
+.flashcards-categories span {
+    margin-bottom: 0;
+    display: block;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------ */
+/* --------------------- FLASHCARDS QUIZ ---------------------- */
+/* App bar contains score and back link */
+.app-bar {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-bar a {
+    font-size: calc(var(--font-size-unit) * 4);
+}
+
+.app-bar span {
+    margin-bottom: 0;
+}
+
+/* CARD ELEMENTS */
+.card {
+    max-width: 600px;
+    height: 250px;
+    box-sizing: border-box;
+    margin: auto auto calc(var(--space-unit) * 2);
+    perspective: 1000px;
+
+}
+
+.card-inner {
+    position: relative;
+    box-shadow: 0 0 20px var(--main-theme-color);
+    background-color: var(--main-theme-color);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    padding: calc(var(--space-unit) * 3);
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+}
+
+/* CARD FRONT */
+.card input {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.card input:focus {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.card button {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.card button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* CARD BACK */
+.card-back {
+    transform: rotateY(180deg);
+}
+
+#answer {
+    margin-bottom: calc(var(--space-unit) * 1);
+}
+
+/* BUTTONS */
+.flashcards-buttons-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: calc(var(--space-unit) * 2);
+}
+
+.flashcards-buttons-wrapper button {
+    flex: 1;
+    padding: calc(var(--space-unit) * 1) calc(var(--space-unit) * 2);
+}
+
+/* ------------------------------------------------------------ */
+/* ------------------------ STOCKS APP ------------------------ */
+.sa-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Search Modal */
+.stocks-modal {
+    overflow: auto;
+    margin-bottom: 0;
+}
+
+.stocks-modal>div {
+    min-width: 100px;
+}
+
+#get-data {
+    display: none;
+    margin: auto;
+}
+
+/* Time Modal */
+.update-time-modal {
+    gap: calc(var(--space-unit) * 2);
+}
+
+.update-time-modal div {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.update-time-modal input {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Displayed by JS */
+.available-choices-label {
+    margin-bottom: calc(var(--alt-space-unit) * 1);
+}
+
+.available-choices {
+    display: inline;
+    margin-bottom: 0;
+}
+
+/* Company name and controls */
+.sa-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: calc(var(--space-unit) * 1);
+    margin-bottom: calc(var(--space-unit) * 2);
+}
+
+.sa-info * {
+    margin-bottom: 0;
+}
+
+.sa-info>span {
+    margin-right: calc(var(--space-unit) * 4);
+}
+
+.sa-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--space-unit) * 1);
+    flex-grow: 1;
+}
+
+.sa-search-tools {
+    flex-grow: 19;
+}
+
+.sa-search-tools input {
+    vertical-align: top;
+    padding: 0.5rem;
+    border-right: none;
+    display: inline;
+    height: 100%;
+    width: calc(100% - 50px);
+}
+
+.sa-search-tools button {
+    border-left: none;
+    display: inline;
+    padding: 0.5rem;
+    width: 50px;
+    height: 100%;
+}
+
+.sa-controls button {
+    flex-grow: 1;
+    padding: calc(var(--alt-space-unit) * 1) calc(var(--alt-space-unit) * 2);
+}
+
+/* The chart */
+.chart-container {
+    width: 100%;
+    margin-bottom: 0;
+    aspect-ratio: 2/1;
+}
+
+.chart-wrapper {
+    height: 100%;
+    margin-bottom: 0;
+}

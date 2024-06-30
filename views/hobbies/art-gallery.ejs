@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head Element -->
+<%- include("../templates/head", {title: "Art Gallery"}); %>
+
+<body>
+    <!-- Navbar -->
+    <%- include("../templates/navbar") -%>
+
+    <!-- Main Content -->
+    <section id="dry-media">
+        <h1 class="text-center">The Art Gallery</h1>
+        <div id="artwork-wrapper" class="dry-media-wrapper"></div>
+    </section>
+
+    <!-- Footer -->
+    <%- include("../templates/copyright", {
+        liSrc: "../images/logos/linkedin.png", 
+        ghSrc: "../images/logos/github.png"
+    }); %>
+
+    <!-- Scripts -->
+    <script src="../javascripts/art-gallery.js"></script>
+</body>
+
+</html>

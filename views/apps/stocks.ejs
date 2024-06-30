@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../templates/head", {title: "Stocks App"}); %>
+
+<body>
+
+    <%- include("../templates/navbar") -%>
+
+    <section style="flex-grow: 1;">
+
+        <div class="sa-wrapper">
+
+            <!-- Search Modal -->
+            <div id="modal" class="fading-modal">
+                <div class="modal-content">
+                    <button class="close-button" id="close"><span
+                            class="material-symbols-outlined google-symbol">close</span></button>
+                    <div class="stocks-modal">
+                        <div id="search-outcome"></div>
+                        <button id="get-data">Get Data</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Modal -->
+            <div id="time-modal" class="fading-modal">
+                <div class="modal-content update-time-modal">
+                    <button class="close-button" id="time-close"><span
+                            class="material-symbols-outlined google-symbol">close</span></button>
+                    <div>
+                        <label for="start">Start Date: </label>
+                        <input type="date" id="start" name="trip-start" min="1999-01-15">
+                    </div>
+                    <div>
+                        <label for="end">End Date: </label>
+                        <input type="date" id="end" name="trip-end" min="1999-01-15">
+                    </div>
+                    <button id="update-time">Update chart</button>
+                </div>
+            </div>
+
+            <!-- company name and controls -->
+            <div class="sa-info">
+                <span class="large-text" id="company-id">Company Name</span>
+                <div class="sa-controls">
+                    <div class="sa-search-tools">
+                        <input id="search-input" type="text" placeholder="e.g., MicroSoft, #AAPL"><button
+                            id="search-button"><span
+                                class="material-symbols-outlined google-symbol">search</span></button>
+                    </div>
+                    <button id="time-span"><span class="material-symbols-outlined google-symbol">
+                            edit_calendar</span></button>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <%- include("../templates/copyright", {
+        liSrc: "../images/logos/linkedin.png", 
+        ghSrc: "../images/logos/github.png"
+    }); %>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../javascripts/stocks.js"></script>
+
+</body>
+
+</html>

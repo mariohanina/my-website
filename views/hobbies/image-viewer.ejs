@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../templates/head", {title: "Image Viewer"}); %>
+
+<body class="iv-body">
+
+    <!-- Directions modal -->
+    <!-- <div id="modal" class="fading-modal">
+        <div class="modal-content">
+            <button class="close-button" id="modal-close"><span
+                    class="material-symbols-outlined google-symbol">close</span></button>
+            <div class="iv-directions-wrapper">
+                <p class="larger-text m-b-2">Controls:</p>
+                <p class="m-b-1">If you are using a PC with a mouse, you can:</p>
+                <ul>
+                    <li>Zoom in/out using the scroll wheel.</li>
+                    <li>Pan the image by clicking and draging.</li>
+                    <li>Restore the default zoom by double clicking.</li>
+                </ul>
+                <p class="m-b-1">Or you can use finger gesture on the touchscreen or the touchpad.</p>
+                <div class="stop-showing-wrapper">
+                    <input id="stop-showing" type="checkbox">
+                    <label for="stop-showing">Don't show again.</label>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- The buttons -->
+    <div class="iv-ui">
+        <div class="iv-buttons-wrapper">
+            <a id="close-btn" href="javascript:history.back()">
+                <button><span class="material-symbols-outlined google-symbol">close</span></button>
+            </a>
+            <div>
+                <a id="prev-img">
+                    <button><span class="material-symbols-outlined google-symbol">arrow_back</span></button>
+                </a>
+                <a id="next-img">
+                    <button><span class="material-symbols-outlined google-symbol">arrow_forward</span></button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- The image -->
+    <div id="scrollable-container">
+        <div class="image-container" id="image-container">
+            <img id="image" src="img.jpg">
+        </div>
+    </div>
+
+    <script>
+        const folder = '<%- folder %>';
+        const assetId = '<%- assetId %>';
+    </script>
+    <script src="../../../javascripts/image-viewer.js"></script>
+
+</body>
+
+</html>
