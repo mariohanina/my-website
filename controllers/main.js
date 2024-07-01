@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 
 
 // Render Main Page
-module.exports.renderMainPage = (req, res) => { res.render("index") };
+module.exports.renderMainPage = (req, res) => { res.render("main/index") };
 
 // Submit Contact Form
 module.exports.submtContactForm = (req, res) => {
@@ -29,13 +29,13 @@ module.exports.submtContactForm = (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(error);
-            res.render("contact-result.ejs", {
+            res.render("main/contact-result.ejs", {
                 heading: "Something went Wrong!",
                 body: "Sorry about that, please try again later."
             })
         } else {
             console.log('Email sent: ' + info.response);
-            res.render("contact-result.ejs", {
+            res.render("main/contact-result.ejs", {
                 heading: "Request received!",
                 body: "Thank you, I will respond to you as soon as possible."
             })

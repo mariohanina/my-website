@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("templates/head", {title: "Mario Hanina"}); %>
+<%- include("../templates/head", {title: "Mario Hanina"}); %>
 
 <body>
 
-    <%- include("templates/navbar") -%>
+    <%- include("../templates/navbar") -%>
 
     <!-- Profile Section -->
     <section id="intro">
@@ -104,10 +104,7 @@
         </form>
     </section>
 
-    <%- include("templates/copyright", {
-        liSrc: "images/logos/linkedin.png", 
-        ghSrc: "images/logos/github.png"
-    }); %>
+    <%- include("../templates/copyright"); %>
 
 </body>
 
