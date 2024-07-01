@@ -34,15 +34,6 @@ async function getRequest(path) {
     return data;
 }
 
-// Makes a post request
-async function postRequest(path, parcel) {
-    const res = await fetch(baseUrl + path, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ parcel: parcel })
-    })
-}
-
 // Finds out which radio button is checked and returns it
 function radioFinder(radiosClass) {
     let chosenRadio;
@@ -152,8 +143,7 @@ function getData() {
         const listOfLabels = [];
         const closingPrice = [];
 
-        postRequest("choice", usersChoice)
-            .then(() => { return getRequest("information") })
+        getRequest(`/data/${usersChoice}`)
             .then((result) => {
 
                 try {
