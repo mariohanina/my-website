@@ -1,111 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout("layouts/boilerplate") %>
 
-<%- include("../templates/head", {title: "Mario Hanina"}); %>
+<!-- Profile Section -->
+<section id="intro">
+    <div class="max-width-800 middle">
+        <h1 class="text-center">Hello visitor, I'm Mario.</h1>
+        <div class="intro-wrapper">
+            <img class="profile-picture border" src="images/profile.jpg" alt="A picture of Me">
+            <div class="profile-text m-b-0">
+                <span>I'm just another human.</span>
+                <p class="m-b-0">I created this website to share with you some
+                    of the highlights of my life, the creations of my imagination, and the activities that I
+                    enjoy doing.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<body>
-
-    <%- include("../templates/navbar") -%>
-
-    <!-- Profile Section -->
-    <section id="intro">
-        <div class="max-width-800 middle">
-            <h1 class="text-center">Hello visitor, I'm Mario.</h1>
-            <div class="intro-wrapper">
-                <img class="profile-picture border" src="images/profile.jpg" alt="A picture of Me">
-                <div class="profile-text m-b-0">
-                    <span>I'm just another human.</span>
-                    <p class="m-b-0">I created this website to share with you some
-                        of the highlights of my life, the creations of my imagination, and the activities that I
-                        enjoy doing.
-                    </p>
+<!-- Art Section -->
+<section id="hobbies">
+    <h2 class="text-center">Hobbies</h2>
+    <div class="hobby-categories">
+        <!-- Dry Media -->
+        <div class="hobby-wrapper">
+            <a href="/hobbies/art-gallery">
+                <div class="hobby-cards">
+                    <img src="https://res.cloudinary.com/dvn8e9cgl/image/upload/w_500/v1719780684/big-bear-lodge_cxoxpr.jpg"
+                        alt="One of my drawings">
                 </div>
-            </div>
+                <h3>Drawing and Painting</h3>
+            </a>
+            <p>I draw because I want to materialize my thoughts, my interpretations, and my observations of the
+                world.</p>
         </div>
-    </section>
-
-    <!-- Art Section -->
-    <section id="hobbies">
-        <h2 class="text-center">Hobbies</h2>
-        <div class="hobby-categories">
-            <!-- Dry Media -->
-            <div class="hobby-wrapper">
-                <a href="/hobbies/art-gallery">
-                    <div class="hobby-cards">
-                        <img src="https://res.cloudinary.com/dvn8e9cgl/image/upload/w_500/v1719780684/big-bear-lodge_cxoxpr.jpg"
-                            alt="One of my drawings">
-                    </div>
-                    <h3>Drawing and Painting</h3>
-                </a>
-                <p>I draw because I want to materialize my thoughts, my interpretations, and my observations of the
-                    world.</p>
-            </div>
-            <!-- Photography -->
-            <div class="hobby-wrapper">
-                <a href="/hobbies/photo-gallery">
-                    <div class="hobby-cards">
-                        <img src="https://res.cloudinary.com/dvn8e9cgl/image/upload/w_500/v1719724180/lake-moraine_muqedk.jpg"
-                            alt="One of my photographs">
-                    </div>
-                    <h3>Traveling</h3>
-                </a>
-                <p>Like most humans, I enjoy capturing fleeting moments. You might enjoy seeing the world through my
-                    eyes.</p>
-            </div>
+        <!-- Photography -->
+        <div class="hobby-wrapper">
+            <a href="/hobbies/photo-gallery">
+                <div class="hobby-cards">
+                    <img src="https://res.cloudinary.com/dvn8e9cgl/image/upload/w_500/v1719724180/lake-moraine_muqedk.jpg"
+                        alt="One of my photographs">
+                </div>
+                <h3>Traveling</h3>
+            </a>
+            <p>Like most humans, I enjoy capturing fleeting moments. You might enjoy seeing the world through my
+                eyes.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Apps -->
-    <section id="software">
-        <h2 class="text-center">Software</h2>
-        <div class="hobby-categories">
-            <!-- Flashcards -->
-            <div class="hobby-wrapper">
-                <a href="/flashcards-app">
-                    <div class="hobby-cards">
-                        <img src="images/software/flashcards.png" alt="Flashcards app">
-                    </div>
-                    <h3>Flashcards app</h3>
-                </a>
-                <p>I wrote this software to practice my Spanish Vocabulary,
-                    you can practice yours too if you want.</p>
-            </div>
-            <!-- Stocks App -->
-            <div class="hobby-wrapper">
-                <a href="/stocks-app">
-                    <div class="hobby-cards">
-                        <img src="images/software/stocks.png" alt="Stocks app">
-                    </div>
-                    <h3>Stocks app</h3>
-                </a>
-                <p>Use it to lookup the stock prices of different companies. This app is
-                    limited since I'm using a free data source.</p>
-            </div>
+<!-- Apps -->
+<section id="software">
+    <h2 class="text-center">Software</h2>
+    <div class="hobby-categories">
+        <!-- Flashcards -->
+        <div class="hobby-wrapper">
+            <a href="/flashcards-app">
+                <div class="hobby-cards">
+                    <img src="images/software/flashcards.png" alt="Flashcards app">
+                </div>
+                <h3>Flashcards app</h3>
+            </a>
+            <p>I wrote this software to practice my Spanish Vocabulary,
+                you can practice yours too if you want.</p>
         </div>
-    </section>
+        <!-- Stocks App -->
+        <div class="hobby-wrapper">
+            <a href="/stocks-app">
+                <div class="hobby-cards">
+                    <img src="images/software/stocks.png" alt="Stocks app">
+                </div>
+                <h3>Stocks app</h3>
+            </a>
+            <p>Use it to lookup the stock prices of different companies. This app is
+                limited since I'm using a free data source.</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2 class="text-center">Contact me</h2>
-        <form class="contact-form" action="/" method="post" target="_blank">
-            <label for="email">Email: </label>
-            <input type="text" id="email" name="email" required>
+<!-- Contact -->
+<section id="contact">
+    <h2 class="text-center">Contact me</h2>
+    <form class="contact-form" action="/" method="post" target="_blank">
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" required>
 
-            <label for="phoneNumber">Phone Number: </label>
-            <input type="text" id="phoneNumber" name="phoneNumber">
+        <label for="phoneNumber">Phone Number: </label>
+        <input type="text" id="phoneNumber" name="phoneNumber">
 
-            <label for="subject">Subject: </label>
-            <input type="text" id="subject" name="subject">
+        <label for="subject">Subject: </label>
+        <input type="text" id="subject" name="subject">
 
-            <label for="message">Message: </label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <%- include("../templates/copyright"); %>
-
-</body>
-
-</html>
+        <button type="submit">Send</button>
+    </form>
+</section>

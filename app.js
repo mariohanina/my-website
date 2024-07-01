@@ -2,8 +2,12 @@
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
 
-// Express and port set up
+// Modules
 const express = require('express');
+const ejsMate = require("ejs-mate");
+
+
+// Express and port set up
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -11,6 +15,7 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(express.static(__dirname + '/public'));
 app.set("view engine", "ejs");
+app.engine("ejs", ejsMate);
 
 
 // Needed for parsing req.body

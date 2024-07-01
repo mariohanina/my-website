@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout("layouts/boilerplate") %>
 
-<%- include("../templates/head", {title: "Flashcards"}); %>
+<section style="flex-grow: 1;">
+    <h1 class="text-center">The Spanish Flashcards App.</h1>
+    <div class="flashcards-categories"></div>
+</section>
 
-<body>
-
-    <%- include("../templates/navbar") -%>
-
-    <section style="flex-grow: 1;">
-        <h1 class="text-center">The Spanish Flashcards App.</h1>
-        <div class="flashcards-categories"></div>
-    </section>
-
-    <%- include("../templates/copyright"); %>
-
-    <script src="../javascripts/flashcards-dictionary.js"></script>
-    <script src="../javascripts/flashcards-main.js"></script>
-
-</body>
-
-</html>
+<script src="../javascripts/flashcards-dictionary.js"></script>
+<script src="../javascripts/flashcards-main.js"></script>

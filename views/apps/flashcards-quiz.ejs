@@ -1,61 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout("layouts/boilerplate") %>
 
-<%- include("../templates/head", {title: "Flashcards"}); %>
+<section style="flex-grow: 1;">
 
-<body>
+    <!-- The modal -->
+    <div id="modal" class="fading-modal">
+        <div class="modal-content">
+            <button class="close-button" id="close"><span
+                    class="material-symbols-outlined google-symbol">close</span></button>
+            <span class="larger-text m-b-2">Nice!</span>
+            <span>You've guessed all the words, go back and try another category.</span>
+        </div>
+    </div>
 
-    <%- include("../templates/navbar") -%>
+    <!-- App bar -->
+    <div class="app-bar">
+        <a class="no-decoration" href="javascript:history.back()"><span class="material-symbols-outlined">
+                arrow_back
+            </span></a>
+        <span id="score">Score</span>
+    </div>
 
-    <section style="flex-grow: 1;">
-
-        <!-- The modal -->
-        <div id="modal" class="fading-modal">
-            <div class="modal-content">
-                <button class="close-button" id="close"><span
-                        class="material-symbols-outlined google-symbol">close</span></button>
-                <span class="larger-text m-b-2">Nice!</span>
-                <span>You've guessed all the words, go back and try another category.</span>
+    <!-- The card -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <span class="text-center larger-text m-b-2" id="question">Question</span>
+                <input type="text" name="user-input" id="user-input" placeholder="Type here" spellcheck="false">
+            </div>
+            <div class="card-back">
+                <span class="text-center larger-text m-b-2" id="answer"></span>
+                <span class="text-center" id="message"></span>
+                <button id="continue" tabindex="-1">Continue</button>
             </div>
         </div>
+    </div>
 
-        <!-- App bar -->
-        <div class="app-bar">
-            <a class="no-decoration" href="javascript:history.back()"><span class="material-symbols-outlined">
-                    arrow_back
-                </span></a>
-            <span id="score">Score</span>
-        </div>
+    <!-- The buttons -->
+    <div class="flashcards-buttons-wrapper">
+        <button id="reset" tabindex="-1">Reset progress</button>
+        <button id="check-answer" tabindex="-1">Done</button>
+    </div>
 
-        <!-- The card -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <span class="text-center larger-text m-b-2" id="question">Question</span>
-                    <input type="text" name="user-input" id="user-input" placeholder="Type here" spellcheck="false">
-                </div>
-                <div class="card-back">
-                    <span class="text-center larger-text m-b-2" id="answer"></span>
-                    <span class="text-center" id="message"></span>
-                    <button id="continue" tabindex="-1">Continue</button>
-                </div>
-            </div>
-        </div>
+</section>
 
-        <!-- The buttons -->
-        <div class="flashcards-buttons-wrapper">
-            <button id="reset" tabindex="-1">Reset progress</button>
-            <button id="check-answer" tabindex="-1">Done</button>
-        </div>
-
-    </section>
-
-    <%- include("../templates/copyright"); %>
-
-    <script src="../javascripts/flashcards-dictionary.js"></script>
-    <script>const urlParam = '<%- urlParam %>';</script>
-    <script src="../javascripts/flashcards-quiz.js"></script>
-
-</body>
-
-</html>
+<script src="../javascripts/flashcards-dictionary.js"></script>
+<script>const urlParam = '<%- urlParam %>';</script>
+<script src="../javascripts/flashcards-quiz.js"></script>
