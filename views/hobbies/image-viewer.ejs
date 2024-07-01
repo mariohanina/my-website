@@ -47,7 +47,12 @@
     <!-- The image -->
     <div id="scrollable-container">
         <div class="image-container" id="image-container">
-            <img id="image" src="img.jpg">
+            <!-- Loader -->
+            <div style="margin-top: 45vh;" id="loader">
+                <div class="loader"></div>
+            </div>
+            <!-- Image, we start with the image not showing and only the loader showing -->
+            <img id="image" src="img.jpg" style="display: none;">
         </div>
     </div>
 

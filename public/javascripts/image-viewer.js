@@ -13,6 +13,7 @@
 // HTML elements
 const image = document.querySelector("#image");
 const scrollDiv = document.querySelector("#scrollable-container");
+const loader = document.querySelector("#loader");
 
 const prevButton = document.querySelector("#prev-img");
 const nextButton = document.querySelector("#next-img");
@@ -57,7 +58,11 @@ async function getFiles(folder, assetId) {
     }
 
     image.src = resources[index].url;
+
+    // After image has loaded, remove the loader, display the image, and toggleButtonDisplay
     toggleButtonDisplay();
+    loader.remove();
+    image.style.display = "initial";
 }
 
 

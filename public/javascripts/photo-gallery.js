@@ -1,6 +1,8 @@
 window.addEventListener('load', async () => {
 
+    // HTML elements
     const photographyWrapper = document.querySelector("#photography-wrapper");
+    const loader = document.querySelector("#loader");
 
     const res = await fetch(("/hobbies/get-asset-list/photography"), { method: "GET" });
     const data = await res.json();
@@ -46,4 +48,6 @@ window.addEventListener('load', async () => {
         // Put the whole thing inside the photographyWrapper
         photographyWrapper.appendChild(figure);
     }
+
+    loader.remove();
 });

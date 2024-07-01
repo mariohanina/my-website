@@ -2,6 +2,7 @@ window.addEventListener('load', async () => {
 
     // Html elements
     const artworkWrapper = document.querySelector("#artwork-wrapper");
+    const loader = document.querySelector("#loader");
 
     // Get list of all files in Cloudinary folder
     const res = await fetch(("/hobbies/get-asset-list/artwork"), { method: "GET" });
@@ -49,4 +50,6 @@ window.addEventListener('load', async () => {
         // Put the whole thing inside the artworkWrapper
         artworkWrapper.appendChild(div);
     }
+
+    loader.remove();
 });
