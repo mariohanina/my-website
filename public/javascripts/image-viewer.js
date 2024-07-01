@@ -58,11 +58,6 @@ async function getFiles(folder, assetId) {
     }
 
     image.src = resources[index].url;
-
-    // After image has loaded, remove the loader, display the image, and toggleButtonDisplay
-    toggleButtonDisplay();
-    loader.remove();
-    image.style.display = "initial";
 }
 
 
@@ -71,16 +66,22 @@ getFiles(folder, assetId)
 
 // Add prevButton functionality
 prevButton.addEventListener("click", (event) => {
-    index -= 1;
-    image.src = resources[index].url;
-    toggleButtonDisplay();
+    if (index > 0) {
+        index -= 1;
+        image.style.display = "none";
+        loader.style.display = "block";
+        image.src = resources[index].url;
+    }
 })
 
 // Add nextButton functionality
 nextButton.addEventListener("click", (event) => {
-    index += 1;
-    image.src = resources[index].url;
-    toggleButtonDisplay();
+    if (index < (resources.length - 1)) {
+        index += 1;
+        image.style.display = "none";
+        loader.style.display = "block";
+        image.src = resources[index].url;
+    }
 })
 
 
@@ -121,7 +122,14 @@ const zoom = (x, y, zoomAmount) => {
 }
 
 // Recalculate the main and npc dimensions when images loads or screen resizes
-image.onload = findDims;
+image.onload = () => {
+    // After image has loaded, remove the loader, display the image, and findDims
+    loader.style.display = "none";
+    image.style.display = "initial";
+    toggleButtonDisplay();
+
+    findDims();
+};
 window.addEventListener("resize", findDims);
 
 // Add the zoom functionality to wheel events
