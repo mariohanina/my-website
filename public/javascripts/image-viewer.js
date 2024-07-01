@@ -1,30 +1,22 @@
 // Modal Related
-
 // Html elements
 // const modalClose = document.querySelector("#modal-close");
 // const stopShowingBtn = document.querySelector("#stop-showing");
-
 // modalClose.addEventListener("click", () => {
 //     if (stopShowingBtn.checked) localStorage.setItem("first-time", "true");
 //     modal.style.display = "none";
 // });
-
 // if (!localStorage.getItem("first-time")) modal.style.display = "flex";
 
 
 
-
-
-
-
-
-
-
+// HTML elements
 const image = document.querySelector("#image");
 const scrollDiv = document.querySelector("#scrollable-container");
 
 const prevButton = document.querySelector("#prev-img");
 const nextButton = document.querySelector("#next-img");
+
 
 // Variable declarations
 let clicking = false;
@@ -36,8 +28,6 @@ let mainDim;
 let npcDim;
 let resources;
 let index;
-
-
 
 
 // Hide prevButton if first image, hide nextButton if last image. Display both otherwise. 
@@ -74,9 +64,6 @@ async function getFiles(folder, assetId) {
 getFiles(folder, assetId)
 
 
-
-
-
 // Add prevButton functionality
 prevButton.addEventListener("click", (event) => {
     index -= 1;
@@ -90,8 +77,6 @@ nextButton.addEventListener("click", (event) => {
     image.src = resources[index].url;
     toggleButtonDisplay();
 })
-
-
 
 
 // If image is taller than window, height is the main dimensions.

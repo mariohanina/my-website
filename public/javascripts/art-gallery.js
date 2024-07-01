@@ -1,23 +1,23 @@
 window.addEventListener('load', async () => {
 
-
+    // Html elements
     const artworkWrapper = document.querySelector("#artwork-wrapper");
 
-
+    // Get list of all files in Cloudinary folder
     const res = await fetch(("/hobbies/get-asset-list/artwork"), { method: "GET" });
     const data = await res.json();
 
-
+    // For each file in Cloudinary folder
     for (const entry of data.results.resources) {
 
-
+        // Get file information
         const assetId = entry.asset_id;
         const name = entry.context.caption;
-        const url = entry.url;
         const thumbnailUrl = entry.url.replace("upload", "upload/w_400");
         const width = entry.context.WidthFactor;
         const height = entry.context.HeightFactor;
-        const description = entry.context.alt;
+        // const url = entry.url;
+        // const description = entry.context.alt;
 
 
         // Calculate the flexGrow based on the proportions
@@ -29,8 +29,6 @@ window.addEventListener('load', async () => {
 
         // Create Div
         const div = document.createElement("div");
-        // WHY DID I ADD AN ID TO THE DIV????
-        div.id = name;
         div.style.flexGrow = flexGrow;
         div.style.width = `${initialWidth}px`;
         div.style.maxWidth = `${maxWidth}px`;
