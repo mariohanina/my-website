@@ -15,10 +15,15 @@ const transporter = nodemailer.createTransport({
 
 
 // Render Main Page
-module.exports.renderMainPage = (req, res) => { res.render("main/index") };
+module.exports.renderMainPage = (req, res) => {
+    res.locals.title = "Mario Hanina";
+    res.render("main/index")
+};
 
 // Submit Contact Form
 module.exports.submtContactForm = (req, res) => {
+    res.locals.title = "Mario Hanina";
+
     const mailOptions = {
         from: EMAIL,
         to: RECIPIENT,

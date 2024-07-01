@@ -3,13 +3,20 @@ const getCloudinaryFolderContent = require("../cloudinary/index.js");
 
 
 // Render Art Gallery
-module.exports.renderArtGallery = (req, res) => { res.render("hobbies/art-gallery"); };
+module.exports.renderArtGallery = (req, res) => {
+    res.locals.title = "Art Gallery";
+    res.render("hobbies/art-gallery");
+};
 
 // Render Photo Gallery
-module.exports.renderPhotoGallery = (req, res) => { res.render("hobbies/photo-gallery") };
+module.exports.renderPhotoGallery = (req, res) => {
+    res.locals.title = "Photo Gallery";
+    res.render("hobbies/photo-gallery")
+};
 
 // Render Image Viewer
 module.exports.renderImageViewer = (req, res) => {
+    res.locals.title = "Image Viewer";
     const { folder, assetId } = req.params;
     res.render("hobbies/image-viewer", { folder, assetId });
 }

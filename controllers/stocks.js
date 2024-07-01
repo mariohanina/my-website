@@ -7,7 +7,10 @@ const apiKey = process.env.API_KEY;
 
 
 // Render Stocks Page
-module.exports.renderStocksPage = (req, res) => { res.render("apps/stocks") };
+module.exports.renderStocksPage = (req, res) => {
+    res.locals.title = "Stocks App";
+    res.render("apps/stocks")
+};
 
 // Request company list
 module.exports.requestListingStatus = (req, res) => {
